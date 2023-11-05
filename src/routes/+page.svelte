@@ -1,2 +1,1 @@
-<h1>Welcome to SvelteKit</h1>
-<p>lol</p>
+<h1>Hello TdA</h1>
