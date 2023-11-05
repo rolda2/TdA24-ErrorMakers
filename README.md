@@ -1,3 +1,12 @@
+# GIT ACTIONS (for Ondra)
+
+```bash
+# potom co udělam changes, tak:
+git add -A
+git commit -m "message"
+git push -u origin Ondra #nebo prostě jméno branche
+```
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
