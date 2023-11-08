@@ -34,5 +34,5 @@ func getSecret(context *gin.Context) {
 func main() {
 	router := gin.Default()
 	router.GET("/api", getSecret)
-	router.Run("localhost:5174")
+	router.Run("0.0.0.0:5174")
 }
