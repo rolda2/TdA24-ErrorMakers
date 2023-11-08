@@ -1,21 +1,34 @@
 package main
 
 import (
+	"log"
+
 	"net/http"
 
+	"os"
+
 	"github.com/gin-gonic/gin"
+
+	"github.com/joho/godotenv"
 )
 
 type Secret struct {
 	Secret string `json:"secret"`
 }
 
-var secrets = []Secret{
-	{Secret: "The cake is a lie"},
+func goDotEnvVariable(key string) string {
+	err := godotenv.Load("../../../.env")
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+	}
+	return os.Getenv(key)
 }
 
 func getSecret(context *gin.Context) {
-	context.IndentedJSON(http.StatusOK, secrets)
+	godotenv.Load(".env")
+	var secret Secret
+	secret.Secret = goDotEnvVariable("SECRET")
+	context.IndentedJSON(http.StatusOK, secret)
 }
 
 func main() {

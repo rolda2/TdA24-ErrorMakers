@@ -1,3 +1,6 @@
+# ENV
+z env.examle
+
 # GIT ACTIONS (for Ondra)
 
 ```bash
