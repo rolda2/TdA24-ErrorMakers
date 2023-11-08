@@ -1,8 +1,8 @@
-FROM node:lts-alpine
+FROM alpine
+COPY . /app
 WORKDIR /app
-COPY . .
+RUN apk update && apk upgrade && apk add --update nodejs npm
+EXPOSE 5173 5174 80 81
 RUN npm install
 RUN /bin/sh script.bash
-CMD cd src/lib/api; /usr/local/go/bin/go run main.go
-ENTRYPOINT npm run dev -- --host 0.0.0.0
-EXPOSE 5173 5174 80 81
+CMD /bin/sh run.sh
