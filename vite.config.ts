@@ -5,5 +5,8 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
 		port: 80,
+		proxy: {
+			'/api': 'http://localhost:5174'
+		}
 	}
 });
