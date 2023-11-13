@@ -8,7 +8,7 @@
     {data.lecturer.last_name} {data.lecturer.title_after}</p>
 <p><img src={data.lecturer.picture_url} alt="picture"></p>
 <p>location: {data.lecturer.location}</p>
-<p>claim: {data.lecturer.location}</p>
+<p>claim: {data.lecturer.claim}</p>
 <p>claim:</p>
 <div>
     {@html data.lecturer.bio}
